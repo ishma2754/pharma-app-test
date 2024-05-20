@@ -1,0 +1,292 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+  background-color: #26A69A;
+  color: black;
+}
+
+
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 25px 25px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+
+.summary-section{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.speech-button{
+  padding: 20px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.speech-button-pressed {
+  background-color: #0078D4; /* Change it to the color you want */
+  color: white; /* Change it to the color you want */
+}
+
+.details.expired
+{
+  background-color: #FFCDD2;
+}
+
+.details.due-today{
+  background-color: #C8E6C9;
+}
+
+
+
+
+.medicines-input-grid,
+.filter-section{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 200px 150px 250px  200px 100px 100px 100px;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.medicines-grid-display,
+.filter-medicines-show{
+  display: grid;
+  grid-template-columns: repeat(4, 230px);
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+
+
+.details{
+  background-color: lightgray;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.details img{
+  width: 100%;
+  height: 100%;
+  border-radius: 2px 2px 0 0;
+  transition: transform 0.3s ease;
+  border-radius: 40px;
+}
+
+.details img:hover {
+  transform: scale(1.8); /* Adjust the scaling factor to your preference */
+}
+
+.image-container{
+  height: 220px; 
+  width: 100%; 
+}
+
+
+
+.earliest-name{
+  color: white ;
+}
+
+.earliest-date{
+  color: white;
+}
+
+
+.name-input,
+.quantity-input,
+.description-input,
+.due-date-input,
+.filter-name-input,
+.filter-date-input{
+  font-size: 15px;
+  padding: 6px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-color: #16a085;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  color: black;
+}
+
+
+
+.image-input{
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+.due-date-input,
+.filter-date-input{
+  color: red;
+}
+
+
+.image-input{
+  padding: 10px;
+}
+
+
+
+.total-medicines{
+  font-size: 20px;
+  font-weight: bold;
+}
+.earliest-expiry{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.description-display,
+.brand-name-display,
+.quantity-display,
+.due-date-name-display{
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.due-date-name-display {
+  color: red;
+}
+
+.add-medicines-button,
+.filter-button{
+  background-color: orange;
+  color: white;
+  padding: 6px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+
+  
+
+.delete-medicines-button,
+.edit-medicines-button{
+  background-color: rgb(254, 160, 10);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 60px;
+ 
+}
+
+@media (max-width: 1000px) {
+  .medicines-grid-display,
+  .filter-medicines-show{
+    grid-template-columns: repeat(2, 223px);
+  }
+
+  .medicines-input-grid,
+  .filter-section
+ {
+    grid-template-columns: 1fr; /* Changes layout to single column */
+    gap: 10px;
+     /* Adjusts spacing for smaller screens */
+  }
+
+  
+  .navbar{
+    font-size: 15px;
+    padding: 5px 5px;
+    width: 100%;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+
+  .navbar{
+    font-size: 15px;
+    padding: 5px 5px;
+    width: 100%;
+  }
+
+  .whole-page-grid {
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+  .medicines-grid-display,
+  .filter-medicines-show{
+    grid-template-columns: repeat(1, 223px);
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    min-width: 223px;
+    max-width: 95%; /* Prevents the cart item from taking full width on very small screens */
+    margin: 0 auto; /* Center the cart item if you're using width less than 100% */
+  }
+
+
+  .medicines-input-grid,
+  .filter-section
+ {
+    grid-template-columns: 1fr; /* Changes layout to single column */
+    gap: 20px;
+     /* Adjusts spacing for smaller screens */
+  }
+
+  
+.due-date-input :focus{
+  width: 100%;
+}
+
+ .details img:hover{
+  transform: scale(1.2);
+ }
+
+
+ .add-medicines-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+ }
+}
+
